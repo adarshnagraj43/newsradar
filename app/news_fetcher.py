@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 class NewsFetcher:
     def __init__(self):
-        self.api_key = "6c27776f94eb423f852225d97b766c03"
+        self.api_key = "APIKEY" // Please login to newsapi org to get API access, key
     def fetch_news(self):
         current_date = datetime.today()
         last_week = current_date - timedelta(days=7)
