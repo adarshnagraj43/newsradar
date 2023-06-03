@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newsapi-fetcher-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: newsapi-fetcher
+  template:
+    metadata:
+      labels:
+        app: newsapi-fetcher
+    spec:
+      containers:
+        - name: newsapi-fetcher-container
+          image: adarshnagraj43/newsradar:latest
+          ports:
+            - containerPort: 8080
