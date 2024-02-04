@@ -1,0 +1,23 @@
+name: Simple Workflow
+
+on: [push, pull_request]
+
+jobs:
+  job1:
+    name: Configure Environment
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Run a simple command
+      run: echo "Environment is successfully completed."
+
+  job2:
+    name: Publish Release
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: Run a simple command
+      run: echo "Published release with notes"
